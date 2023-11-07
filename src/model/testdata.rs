@@ -99,5 +99,5 @@ fn str_to_train(str: &str, is_east: bool) -> Vec<Train> {
 	} }
 } */
 pub fn testdata() -> DiaFile {
-	deserialize(include_str!("../../test.dia"))
+	deserialize(include_str!("../../test.dia")).expect("ParseError")
 }
