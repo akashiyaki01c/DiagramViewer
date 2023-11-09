@@ -81,7 +81,7 @@ pub fn testdata() -> DiaFile {
 						Station { name: String::from("板宿"), next_station_distance: 2.9, is_main: false, },
 						Station { name: String::from("妙法寺"), next_station_distance: 1.6, is_main: false, },
 						Station { name: String::from("名谷"), next_station_distance: 1.8, is_main: true, },
-						Station { name: String::from("運動公園"), next_station_distance: 1.7, is_main: false, },
+						Station { name: String::from("総合運動公園"), next_station_distance: 1.7, is_main: false, },
 						Station { name: String::from("学園都市"), next_station_distance: 1.6, is_main: true, },
 						Station { name: String::from("伊川谷"), next_station_distance: 1.7, is_main: false, },
 						Station { name: String::from("西神南"), next_station_distance: 2.3, is_main: false, },
@@ -90,12 +90,24 @@ pub fn testdata() -> DiaFile {
 				}
 			],
 			train_types: vec![
-				TrainType { name: String::from("普通") }
+				TrainType { name: String::from("普通"), line_color: [0, 0, 0], line_type: super::dia::traintype::LineType::Solid },
+				TrainType { name: String::from("回送"), line_color: [255, 0, 0], line_type: super::dia::traintype::LineType::Dashed(1.0, 5.0, 5.0)},
 			],
 			diagrams: vec![
 				Diagram {
 					down_trains: str_to_train(&get_weekday_west_csv(), false),
-					up_trains: str_to_train(&get_weekday_east_csv(), true),
+					up_trains: {
+						let mut v = str_to_train(&get_weekday_east_csv(), true);
+						v.push(Train { train_type_index: 1, station_times: vec![
+							StationTime { line_index: 0, station_index: 16, arrive: None, departure: Some(Time { hour: 9, minute: 46, second: 0 }) },
+							StationTime { line_index: 0, station_index: 15, arrive: None, departure: Some(Time { hour: 9, minute: 49, second: 0 }) },
+							StationTime { line_index: 0, station_index: 14, arrive: None, departure: Some(Time { hour: 9, minute: 51, second: 0 }) },
+							StationTime { line_index: 0, station_index: 13, arrive: None, departure: Some(Time { hour: 9, minute: 53, second: 0 }) },
+							StationTime { line_index: 0, station_index: 12, arrive: None, departure: Some(Time { hour: 9, minute: 55, second: 0 }) },
+							StationTime { line_index: 0, station_index: 11, arrive: None, departure: Some(Time { hour: 9, minute: 58, second: 0 }) },
+						]});
+						v
+					},
 				},
 				Diagram {
 					down_trains: str_to_train(&get_holiday_west_csv(), false),

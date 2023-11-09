@@ -65,7 +65,7 @@ DiaFile(
 						is_main: true,
 					),
 					Station(
-						name: "運動公園",
+						name: "総合運動公園",
 						next_station_distance: 1.7,
 						is_main: false,
 					),
@@ -95,6 +95,25 @@ DiaFile(
 		train_types: [
 			TrainType(
 				name: "普通",
+				line_color: (
+					0,
+					0,
+					0,
+				),
+				line_type: Solid,
+			),
+			TrainType(
+				name: "回送",
+				line_color: (
+					255,
+					0,
+					0,
+				),
+				line_type: Dashed(
+					1.0,
+					5.0,
+					5.0,
+				),
 			),
 		],
 		diagrams: [
@@ -84375,6 +84394,71 @@ DiaFile(
 								departure: Some(Time(
 									hour: 0,
 									minute: 52,
+									second: 0,
+								)),
+							),
+						],
+					),
+					Train(
+						train_type_index: 1,
+						station_times: [
+							StationTime(
+								line_index: 0,
+								station_index: 16,
+								arrive: None,
+								departure: Some(Time(
+									hour: 9,
+									minute: 46,
+									second: 0,
+								)),
+							),
+							StationTime(
+								line_index: 0,
+								station_index: 15,
+								arrive: None,
+								departure: Some(Time(
+									hour: 9,
+									minute: 49,
+									second: 0,
+								)),
+							),
+							StationTime(
+								line_index: 0,
+								station_index: 14,
+								arrive: None,
+								departure: Some(Time(
+									hour: 9,
+									minute: 51,
+									second: 0,
+								)),
+							),
+							StationTime(
+								line_index: 0,
+								station_index: 13,
+								arrive: None,
+								departure: Some(Time(
+									hour: 9,
+									minute: 53,
+									second: 0,
+								)),
+							),
+							StationTime(
+								line_index: 0,
+								station_index: 12,
+								arrive: None,
+								departure: Some(Time(
+									hour: 9,
+									minute: 55,
+									second: 0,
+								)),
+							),
+							StationTime(
+								line_index: 0,
+								station_index: 11,
+								arrive: None,
+								departure: Some(Time(
+									hour: 9,
+									minute: 58,
 									second: 0,
 								)),
 							),
