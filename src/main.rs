@@ -1,10 +1,10 @@
-mod ui;
-mod model;
 mod io;
+mod model;
+mod ui;
 
-use ui::app::DiagramApp;
 use eframe::egui;
 use model::testdata::testdata;
+use ui::app::DiagramApp;
 
 fn main() {
     let options = eframe::NativeOptions {

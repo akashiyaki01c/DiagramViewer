@@ -1,16 +1,10 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
-
-
-#[derive(Serialize, Deserialize)]
-#[derive(Debug, Default)]
-#[derive(Clone)]
+#[derive(Serialize, Deserialize, Debug, Default, Clone)]
 pub struct BasicStation {
-	pub name: String,
-	pub tracks: Vec<StationTrack>,
+    pub name: String,
+    pub tracks: Vec<StationTrack>,
 }
 
-#[derive(Serialize, Deserialize)]
-#[derive(Debug, Default)]
-#[derive(Clone)]
+#[derive(Serialize, Deserialize, Debug, Default, Clone)]
 pub struct StationTrack(pub usize, pub String);

@@ -1,23 +1,21 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize)]
-#[derive(Debug, Default)]
-#[derive(Clone)]
+#[derive(Serialize, Deserialize, Debug, Default, Clone)]
 pub struct TrainType {
-	pub name: String,
-	pub line_color: [u8; 3],
-	pub line_type: LineType,
+    pub name: String,
+    pub line_color: [u8; 3],
+    pub line_type: LineType,
 }
 
-#[derive(Serialize, Deserialize)]
-#[derive(Debug)]
-#[derive(Clone)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub enum LineType {
-	Solid,
-	Bold(f32),
-	Dashed(f32, f32, f32),
-}	
+    Solid,
+    Bold(f32),
+    Dashed(f32, f32, f32),
+}
 
 impl Default for LineType {
-	fn default() -> Self { Self::Solid }
+    fn default() -> Self {
+        Self::Solid
+    }
 }

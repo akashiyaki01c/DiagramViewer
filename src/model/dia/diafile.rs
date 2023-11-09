@@ -1,20 +1,16 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
-use super::{line::Line, traintype::TrainType, diagram::Diagram};
+use super::{diagram::Diagram, line::Line, traintype::TrainType};
 
-#[derive(Serialize, Deserialize)]
-#[derive(Debug, Default)]
-#[derive(Clone)]
+#[derive(Serialize, Deserialize, Debug, Default, Clone)]
 pub struct DiaFile {
-	pub version: String,
-	pub railway: Railway,
+    pub version: String,
+    pub railway: Railway,
 }
 
-#[derive(Serialize, Deserialize)]
-#[derive(Debug, Default)]
-#[derive(Clone)]
+#[derive(Serialize, Deserialize, Debug, Default, Clone)]
 pub struct Railway {
-	pub lines: Vec<Line>,
-	pub train_types: Vec<TrainType>,
-	pub diagrams: Vec<Diagram>,
+    pub lines: Vec<Line>,
+    pub train_types: Vec<TrainType>,
+    pub diagrams: Vec<Diagram>,
 }
