@@ -2,7 +2,7 @@
 
 use crate::io::file::deserialize;
 
-use super::{diafile::{DiaFile, Railway}, line::{Line, Station}, traintype::TrainType, diagram::{Diagram, Train, StationTime, Time}};
+use super::dia::{diafile::{DiaFile, Railway}, line::{Line, Station}, traintype::TrainType, diagram::{self, Train, StationTime, Time, Diagram}};
 
 fn shiftjis_to_utf8(bytes: &[u8]) -> String {
 	String::from(encoding_rs::SHIFT_JIS.decode(bytes).0)
@@ -61,43 +61,51 @@ fn str_to_train(str: &str, is_east: bool) -> Vec<Train> {
 	trains
 }
 
-/* pub fn testdata() -> DiaFile {
-	
-	DiaFile { railway: Railway {
-		lines: vec![
-			Line {
-				stations: vec![
-					Station { name: String::from("谷上"), next_station_distance: 7.5, },
-					Station { name: String::from("新神戸"), next_station_distance: 1.3, },
-					Station { name: String::from("三宮"), next_station_distance: 0.9, },
-					Station { name: String::from("県庁前"), next_station_distance: 1.1, },
-					Station { name: String::from("大倉山"), next_station_distance: 1.0, },
-					Station { name: String::from("湊川公園"), next_station_distance: 1.0, },
-					Station { name: String::from("上沢"), next_station_distance: 0.8, },
-					Station { name: String::from("長田"), next_station_distance: 1.5, },
-					Station { name: String::from("新長田"), next_station_distance: 1.2, },
-					Station { name: String::from("板宿"), next_station_distance: 2.9, },
-					Station { name: String::from("妙法寺"), next_station_distance: 1.6, },
-					Station { name: String::from("名谷"), next_station_distance: 1.8, },
-					Station { name: String::from("運動公園"), next_station_distance: 1.7, },
-					Station { name: String::from("学園都市"), next_station_distance: 1.6, },
-					Station { name: String::from("伊川谷"), next_station_distance: 1.7, },
-					Station { name: String::from("西神南"), next_station_distance: 2.3, },
-					Station { name: String::from("西神中央"), next_station_distance: 0.0, },
-				]
-			}
-		],
-		train_types: vec![
-			TrainType { name: String::from("普通") }
-		],
-		diagrams: vec![
-			Diagram {
-				down_trains: str_to_train(&get_weekday_west_csv(), false),
-				up_trains: str_to_train(&get_weekday_east_csv(), true),
-			}
-		]
-	} }
-} */
 pub fn testdata() -> DiaFile {
-	deserialize(include_str!("../../test.dia")).expect("ParseError")
+	
+	DiaFile { 
+		version: String::from("0.01"),
+		railway: Railway {
+			lines: vec![
+				Line {
+					stations: vec![
+						Station { name: String::from("谷上"), next_station_distance: 7.5, is_main: true, },
+						Station { name: String::from("新神戸"), next_station_distance: 1.3, is_main: true, },
+						Station { name: String::from("三宮"), next_station_distance: 0.9, is_main: false, },
+						Station { name: String::from("県庁前"), next_station_distance: 1.1, is_main: false, },
+						Station { name: String::from("大倉山"), next_station_distance: 1.0, is_main: true, },
+						Station { name: String::from("湊川公園"), next_station_distance: 1.0, is_main: false, },
+						Station { name: String::from("上沢"), next_station_distance: 0.8, is_main: false, },
+						Station { name: String::from("長田"), next_station_distance: 1.5, is_main: false, },
+						Station { name: String::from("新長田"), next_station_distance: 1.2, is_main: true, },
+						Station { name: String::from("板宿"), next_station_distance: 2.9, is_main: false, },
+						Station { name: String::from("妙法寺"), next_station_distance: 1.6, is_main: false, },
+						Station { name: String::from("名谷"), next_station_distance: 1.8, is_main: true, },
+						Station { name: String::from("運動公園"), next_station_distance: 1.7, is_main: false, },
+						Station { name: String::from("学園都市"), next_station_distance: 1.6, is_main: true, },
+						Station { name: String::from("伊川谷"), next_station_distance: 1.7, is_main: false, },
+						Station { name: String::from("西神南"), next_station_distance: 2.3, is_main: false, },
+						Station { name: String::from("西神中央"), next_station_distance: 0.0, is_main: true, },
+					]
+				}
+			],
+			train_types: vec![
+				TrainType { name: String::from("普通") }
+			],
+			diagrams: vec![
+				Diagram {
+					down_trains: str_to_train(&get_weekday_west_csv(), false),
+					up_trains: str_to_train(&get_weekday_east_csv(), true),
+				},
+				Diagram {
+					down_trains: str_to_train(&get_holiday_west_csv(), false),
+					up_trains: str_to_train(&get_holiday_east_csv(), true),
+				}
+			]
+		} 
+	}
 }
+
+/* pub fn testdata() -> DiaFile {
+	deserialize(include_str!("../../test.dia")).expect("ParseError")
+} */

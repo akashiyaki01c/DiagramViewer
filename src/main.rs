@@ -1,10 +1,8 @@
-mod app;
-
-mod diagram_viewer;
+mod ui;
 mod model;
 mod io;
 
-use diagram_viewer::DiagramViewer;
+use ui::app::DiagramApp;
 use eframe::egui;
 use model::testdata::testdata;
 
@@ -16,10 +14,10 @@ fn main() {
     let _ = eframe::run_native(
         "Diagram Viewer",
         options,
-        Box::new(|_cc| {
-            let mut viewer = Box::new(DiagramViewer::new(_cc));
-            viewer.diagram_data = testdata();
-            viewer
+        Box::new(|cc| {
+            let mut app = Box::new(DiagramApp::new(cc));
+            app.diagram_data = testdata();
+            app
         }),
     );
 }

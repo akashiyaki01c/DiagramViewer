@@ -1,6 +1,8 @@
-pub mod diafile;
-pub mod line;
-pub mod traintype;
-pub mod diagram;
+pub mod dia;
+
+pub mod basic_data;
+
+pub mod runcurve;
+
 
 pub mod testdata;
