@@ -180,8 +180,16 @@ impl DiagramViewer {
 
         ui.allocate_space(now_size);
         let painter = ui.painter();
-        painter.extend(draw_time_line(self, ui, diagram_data));
-        painter.extend(get_station_line(self, ui, diagram_data));
+        // painter.extend(draw_time_line(self, ui, diagram_data));
+        // painter.extend(get_station_line(self, ui, diagram_data));
+
+        app_ui::draw_train(
+            &ui, 
+            start_pos,
+            now_size,
+            Vec2 { x: 1.0, y: 1.0 },
+            root
+        );
 
         // draw train
         for updw in [

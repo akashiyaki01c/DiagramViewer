@@ -1,7 +1,7 @@
 pub mod station;
-mod test;
 #[cfg(test)]
-mod train;
+pub mod test;
+pub mod train;
 
 use emath::{Pos2, Rect, RectTransform};
 

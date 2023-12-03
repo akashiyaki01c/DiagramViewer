@@ -30,6 +30,10 @@ impl Time {
     pub fn second(&self) -> usize {
         self.0 % 60
     }
+
+    pub fn total_minute(&self) -> usize {
+        self.0 / 60
+    }
 }
 
 impl ToString for Time {

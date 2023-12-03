@@ -136,6 +136,14 @@ impl StationTime {
             }
         }
     }
+
+    pub fn is_empty(&self) -> bool {
+        if self.arrive == None || self.departure == None {
+            false
+        } else {
+            true
+        }
+    }
 }
 
 /// 停車種別を表す列挙体

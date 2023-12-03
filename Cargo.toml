@@ -25,3 +25,4 @@ serde = { version = "1.0.192", features = ["derive"] }
 zstd = "0.13.0"
 diagram-types = { path="./crates/diagram-types" }
 train-drawer = { path = "./crates/train-drawer"}
+app-ui = { path="./crates/app-ui" }
