@@ -1,16 +1,17 @@
-use eframe::egui::{self, CentralPanel, SidePanel, TopBottomPanel, Visuals, Window};
+use eframe::egui::{self, CentralPanel, Frame, SidePanel, TopBottomPanel, Visuals, Window};
 
 use crate::{
     io::file, model::dia::diafile::DiaFile, ui::diagram_viewer::DiagramViewer,
     ui::menu_bar::Menubar,
 };
 
-use super::explorer::Explorer;
+use super::{explorer::Explorer, timetable_viewer::TimetableViewer};
 
-#[derive(Debug, Default)]
+#[derive(Default)]
 pub struct DiagramApp {
     pub diagram_data: DiaFile,
     pub diagram_viewer: DiagramViewer,
+    pub timetable_viewer: TimetableViewer,
     pub menubar: Menubar,
     pub explorer: Explorer,
 }
@@ -22,6 +23,7 @@ impl DiagramApp {
 
         Self {
             diagram_viewer: DiagramViewer::new(),
+            timetable_viewer: TimetableViewer::new(),
             ..Self::default()
         }
     }
@@ -56,16 +58,13 @@ impl eframe::App for DiagramApp {
         });
         CentralPanel::default().show(ctx, |_ui| {
             Window::new("Diagram Viewer").show(ctx, |ui| {
-                self.diagram_viewer.update(ctx, ui, &self.diagram_data);
-                TopBottomPanel::top("viewer-menu").show_inside(ui, |ui| {
-                    ui.menu_button("View", |ui| {
-                        if ui.button("Reset Scale").clicked() {
-                            self.diagram_viewer.scale_x = 1.0;
-                            self.diagram_viewer.scale_y = 1.0;
-                        }
-                    })
+                Frame::canvas(ui.style()).show(ui, |ui| {
+                    self.diagram_viewer.update(ctx, ui, &self.diagram_data);
                 });
-            })
+            });
+            Window::new("Timetable Viewer").show(ctx, |ui| {
+                self.timetable_viewer.update(ctx, ui, &self.diagram_data);
+            });
         });
     }
 

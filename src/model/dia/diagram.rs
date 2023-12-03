@@ -32,3 +32,9 @@ impl Time {
         (self.hour as usize) * 60 + (self.minute as usize)
     }
 }
+
+impl ToString for Time {
+    fn to_string(&self) -> String {
+        format!("{:02}:{:02}", self.hour, self.minute)
+    }
+}

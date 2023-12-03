@@ -16,7 +16,7 @@ fn main() {
         options,
         Box::new(|cc| {
             let mut app = Box::new(DiagramApp::new(cc));
-            app.diagram_data = testdata();
+            app.diagram_data = testdata(); /* open_diagram_dialog() */
             app
         }),
     );

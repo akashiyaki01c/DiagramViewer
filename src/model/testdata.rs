@@ -88,7 +88,7 @@ fn str_to_train(str: &str, is_east: bool) -> Vec<Train> {
     trains
 }
 
-pub fn testdata() -> DiaFile {
+/* pub fn testdata() -> DiaFile {
     DiaFile {
         version: String::from("0.01"),
         railway: Railway {
@@ -273,8 +273,8 @@ pub fn testdata() -> DiaFile {
             ],
         },
     }
-}
-
-/* pub fn testdata() -> DiaFile {
-    deserialize(include_str!("../../test.dia")).expect("ParseError")
 } */
+
+pub fn testdata() -> DiaFile {
+    deserialize(include_str!("../../export.dia")).expect("ParseError")
+}

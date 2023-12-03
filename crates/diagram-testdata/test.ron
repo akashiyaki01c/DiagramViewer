@@ -1,0 +1,525 @@
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+RootFile(
+    version: FileVersion(0, 1),
+    stations: {
+        "0c031d86-d49d-438f-aa23-58d0924d628f": Station(
+            id: "0c031d86-d49d-438f-aa23-58d0924d628f",
+            name: "甲東園",
+        ),
+        "98a0a9a9-7965-4593-b3f5-a8aff5884576": Station(
+            id: "98a0a9a9-7965-4593-b3f5-a8aff5884576",
+            name: "高速神戸",
+        ),
+        "8c7d3da2-eb5b-4192-a73b-9b8249a0ba29": Station(
+            id: "8c7d3da2-eb5b-4192-a73b-9b8249a0ba29",
+            name: "仁川",
+        ),
+        "f04a815e-97bd-4f0c-9b5d-68ac2f84263e": Station(
+            id: "f04a815e-97bd-4f0c-9b5d-68ac2f84263e",
+            name: "阪神国道",
+        ),
+        "a26d1984-c013-4029-b32d-a584c2b16baa": Station(
+            id: "a26d1984-c013-4029-b32d-a584c2b16baa",
+            name: "夙川",
+        ),
+        "be79fd98-c1ff-4752-a6d3-769a96620234": Station(
+            id: "be79fd98-c1ff-4752-a6d3-769a96620234",
+            name: "園田",
+        ),
+        "f97d000f-107b-4a1c-b05c-6d42bed08709": Station(
+            id: "f97d000f-107b-4a1c-b05c-6d42bed08709",
+            name: "新開地",
+        ),
+        "284ae772-21ca-4bb0-bcc7-20fc2c711d71": Station(
+            id: "284ae772-21ca-4bb0-bcc7-20fc2c711d71",
+            name: "六甲",
+        ),
+        "0b4deb44-3c30-4404-b5e3-7b23b316dba5": Station(
+            id: "0b4deb44-3c30-4404-b5e3-7b23b316dba5",
+            name: "大阪梅田",
+        ),
+        "100a22c2-701b-433d-893a-13d418678935": Station(
+            id: "100a22c2-701b-433d-893a-13d418678935",
+            name: "宝塚",
+        ),
+        "3c6cf450-ae92-4811-bea3-1ba11a504516": Station(
+            id: "3c6cf450-ae92-4811-bea3-1ba11a504516",
+            name: "門戸厄神",
+        ),
+        "874e1b74-64f8-4bb8-a3bf-c3b9f5c13028": Station(
+            id: "874e1b74-64f8-4bb8-a3bf-c3b9f5c13028",
+            name: "王子公園",
+        ),
+        "aa3a2ea3-e93a-4458-9913-210151500c0d": Station(
+            id: "aa3a2ea3-e93a-4458-9913-210151500c0d",
+            name: "苦楽園口",
+        ),
+        "5ff6c977-8041-485e-9a2b-51b9fd36232c": Station(
+            id: "5ff6c977-8041-485e-9a2b-51b9fd36232c",
+            name: "稲野",
+        ),
+        "479a12f4-cc76-4840-a64b-08cc4b6874e7": Station(
+            id: "479a12f4-cc76-4840-a64b-08cc4b6874e7",
+            name: "御影",
+        ),
+        "a9b2204b-45d7-4db7-b548-8c84a6b33b39": Station(
+            id: "a9b2204b-45d7-4db7-b548-8c84a6b33b39",
+            name: "西宮北口",
+        ),
+        "b66e7fb5-5c54-41db-be54-01286144d0ba": Station(
+            id: "b66e7fb5-5c54-41db-be54-01286144d0ba",
+            name: "伊丹",
+        ),
+        "b5ef56cc-e2aa-4f8e-ac1b-3e7d1e8b0701": Station(
+            id: "b5ef56cc-e2aa-4f8e-ac1b-3e7d1e8b0701",
+            name: "芦屋川",
+        ),
+        "74884818-e4c8-490e-b07c-1544d11703b9": Station(
+            id: "74884818-e4c8-490e-b07c-1544d11703b9",
+            name: "神戸三宮",
+        ),
+        "f13117c8-75bc-4ab2-9829-7ef968f9b43c": Station(
+            id: "f13117c8-75bc-4ab2-9829-7ef968f9b43c",
+            name: "小林",
+        ),
+        "85727352-dcfc-47c4-8829-6ea9679c182f": Station(
+            id: "85727352-dcfc-47c4-8829-6ea9679c182f",
+            name: "逆瀬川",
+        ),
+        "1435fe6f-1333-412d-8261-7b172b499d0e": Station(
+            id: "1435fe6f-1333-412d-8261-7b172b499d0e",
+            name: "宝塚南口",
+        ),
+        "188b14ce-d443-4b55-9620-0e09c2981c63": Station(
+            id: "188b14ce-d443-4b55-9620-0e09c2981c63",
+            name: "岡本",
+        ),
+        "bf55b7f7-76a3-4a90-acfc-1655bcc9e135": Station(
+            id: "bf55b7f7-76a3-4a90-acfc-1655bcc9e135",
+            name: "塚口",
+        ),
+        "d7845fed-b74c-4f84-9814-5fa3fd0584f7": Station(
+            id: "d7845fed-b74c-4f84-9814-5fa3fd0584f7",
+            name: "甲陽園",
+        ),
+        "017da846-5179-48dc-89cf-a7859b7a8f4d": Station(
+            id: "017da846-5179-48dc-89cf-a7859b7a8f4d",
+            name: "花隈",
+        ),
+        "c897a2eb-8179-4c76-ab56-97607dc31bfc": Station(
+            id: "c897a2eb-8179-4c76-ab56-97607dc31bfc",
+            name: "中津",
+        ),
+        "667dc82d-34da-4044-b099-4601f0c35b6e": Station(
+            id: "667dc82d-34da-4044-b099-4601f0c35b6e",
+            name: "神崎川",
+        ),
+        "3b051711-fc10-481a-85ec-0c632ca8b811": Station(
+            id: "3b051711-fc10-481a-85ec-0c632ca8b811",
+            name: "今津",
+        ),
+        "0333c502-43a7-4214-a527-b1b2080da09d": Station(
+            id: "0333c502-43a7-4214-a527-b1b2080da09d",
+            name: "武庫之荘",
+        ),
+        "7e47016d-d586-4c40-8282-c1dbecdc4491": Station(
+            id: "7e47016d-d586-4c40-8282-c1dbecdc4491",
+            name: "十三",
+        ),
+        "8d296116-6289-480d-8ada-adbbce784654": Station(
+            id: "8d296116-6289-480d-8ada-adbbce784654",
+            name: "春日野道",
+        ),
+        "cc8f286b-894e-4335-983a-9dc5aafb71d1": Station(
+            id: "cc8f286b-894e-4335-983a-9dc5aafb71d1",
+            name: "新伊丹",
+        ),
+    },
+    routes: {
+        "fd399d67-4f6f-4d12-a644-4441dd905b32": Route(
+            id: "fd399d67-4f6f-4d12-a644-4441dd905b32",
+            name: "今津北線",
+            station_refs: [
+                "a9b2204b-45d7-4db7-b548-8c84a6b33b39",
+                "3c6cf450-ae92-4811-bea3-1ba11a504516",
+                "0c031d86-d49d-438f-aa23-58d0924d628f",
+                "8c7d3da2-eb5b-4192-a73b-9b8249a0ba29",
+                "f13117c8-75bc-4ab2-9829-7ef968f9b43c",
+                "85727352-dcfc-47c4-8829-6ea9679c182f",
+                "1435fe6f-1333-412d-8261-7b172b499d0e",
+                "100a22c2-701b-433d-893a-13d418678935",
+            ],
+            station_distances: [
+                7.7,
+                6.4,
+                5.4,
+                4.5,
+                2.8,
+                1.8,
+                0.9,
+                0.0,
+            ],
+        ),
+        "c41f37b0-e8e6-43ec-ab28-9616fd5b4152": Route(
+            id: "c41f37b0-e8e6-43ec-ab28-9616fd5b4152",
+            name: "伊丹線",
+            station_refs: [
+                "bf55b7f7-76a3-4a90-acfc-1655bcc9e135",
+                "5ff6c977-8041-485e-9a2b-51b9fd36232c",
+                "cc8f286b-894e-4335-983a-9dc5aafb71d1",
+                "b66e7fb5-5c54-41db-be54-01286144d0ba",
+            ],
+            station_distances: [
+                0.0,
+                1.4,
+                2.2,
+                3.1,
+            ],
+        ),
+        "ff349fd5-3609-4d55-9b4f-5fae74cc996b": Route(
+            id: "ff349fd5-3609-4d55-9b4f-5fae74cc996b",
+            name: "甲陽線",
+            station_refs: [
+                "a26d1984-c013-4029-b32d-a584c2b16baa",
+                "aa3a2ea3-e93a-4458-9913-210151500c0d",
+                "d7845fed-b74c-4f84-9814-5fa3fd0584f7",
+            ],
+            station_distances: [
+                0.0,
+                0.9,
+                2.2,
+            ],
+        ),
+        "56e09979-c725-4922-bf77-7af61aa2806b": Route(
+            id: "56e09979-c725-4922-bf77-7af61aa2806b",
+            name: "神戸線 (夙川-神戸三宮)",
+            station_refs: [
+                "a26d1984-c013-4029-b32d-a584c2b16baa",
+                "b5ef56cc-e2aa-4f8e-ac1b-3e7d1e8b0701",
+                "188b14ce-d443-4b55-9620-0e09c2981c63",
+                "479a12f4-cc76-4840-a64b-08cc4b6874e7",
+                "284ae772-21ca-4bb0-bcc7-20fc2c711d71",
+                "874e1b74-64f8-4bb8-a3bf-c3b9f5c13028",
+                "8d296116-6289-480d-8ada-adbbce784654",
+                "74884818-e4c8-490e-b07c-1544d11703b9",
+            ],
+            station_distances: [
+                18.3,
+                21.0,
+                23.4,
+                25.6,
+                27.4,
+                29.2,
+                30.7,
+                32.3,
+            ],
+        ),
+        "03aab703-d1d6-41ed-9a9d-3022fdd26c98": Route(
+            id: "03aab703-d1d6-41ed-9a9d-3022fdd26c98",
+            name: "神戸線 (神戸三宮-新開地)",
+            station_refs: [
+                "74884818-e4c8-490e-b07c-1544d11703b9",
+                "017da846-5179-48dc-89cf-a7859b7a8f4d",
+                "98a0a9a9-7965-4593-b3f5-a8aff5884576",
+                "f97d000f-107b-4a1c-b05c-6d42bed08709",
+            ],
+            station_distances: [
+                32.3,
+                33.6,
+                34.5,
+                35.1,
+            ],
+        ),
+        "d3ababa9-86fd-47a7-b314-813a597609ac": Route(
+            id: "d3ababa9-86fd-47a7-b314-813a597609ac",
+            name: "神戸線 (十三-塚口)",
+            station_refs: [
+                "7e47016d-d586-4c40-8282-c1dbecdc4491",
+                "667dc82d-34da-4044-b099-4601f0c35b6e",
+                "be79fd98-c1ff-4752-a6d3-769a96620234",
+                "bf55b7f7-76a3-4a90-acfc-1655bcc9e135",
+            ],
+            station_distances: [
+                2.4,
+                4.1,
+                7.2,
+                10.2,
+            ],
+        ),
+        "2dc7d095-99f9-4f32-8513-d00bf889f313": Route(
+            id: "2dc7d095-99f9-4f32-8513-d00bf889f313",
+            name: "神戸線 (西宮北口-夙川)",
+            station_refs: [
+                "a9b2204b-45d7-4db7-b548-8c84a6b33b39",
+                "a26d1984-c013-4029-b32d-a584c2b16baa",
+            ],
+            station_distances: [
+                15.6,
+                18.3,
+            ],
+        ),
+        "4f932822-8f00-463e-985f-e83d5555a3d7": Route(
+            id: "4f932822-8f00-463e-985f-e83d5555a3d7",
+            name: "今津南線",
+            station_refs: [
+                "a9b2204b-45d7-4db7-b548-8c84a6b33b39",
+                "f04a815e-97bd-4f0c-9b5d-68ac2f84263e",
+                "3b051711-fc10-481a-85ec-0c632ca8b811",
+            ],
+            station_distances: [
+                7.7,
+                8.6,
+                9.3,
+            ],
+        ),
+        "028056cf-14f4-41c1-bf6a-3d8258a740a8": Route(
+            id: "028056cf-14f4-41c1-bf6a-3d8258a740a8",
+            name: "神戸線 (塚口-西宮北口)",
+            station_refs: [
+                "bf55b7f7-76a3-4a90-acfc-1655bcc9e135",
+                "0333c502-43a7-4214-a527-b1b2080da09d",
+                "a9b2204b-45d7-4db7-b548-8c84a6b33b39",
+            ],
+            station_distances: [
+                10.2,
+                12.3,
+                15.6,
+            ],
+        ),
+        "fe0dd975-6b75-4e5f-98af-95dc9cd52694": Route(
+            id: "fe0dd975-6b75-4e5f-98af-95dc9cd52694",
+            name: "神戸線 (梅田-十三)",
+            station_refs: [
+                "0b4deb44-3c30-4404-b5e3-7b23b316dba5",
+                "c897a2eb-8179-4c76-ab56-97607dc31bfc",
+                "7e47016d-d586-4c40-8282-c1dbecdc4491",
+            ],
+            station_distances: [
+                0.0,
+                0.9,
+                2.4,
+            ],
+        ),
+    },
+    lines: {
+        "738175bc-510c-4012-b73f-24e93c006a77": Line(
+            id: "738175bc-510c-4012-b73f-24e93c006a77",
+            name: "(西宮北口-)甲陽線",
+            route_refs: [
+                ("2dc7d095-99f9-4f32-8513-d00bf889f313", Normal),
+                ("ff349fd5-3609-4d55-9b4f-5fae74cc996b", Normal),
+            ],
+        ),
+        "7251cf61-ec9f-4951-b72c-7ec6c3664c75": Line(
+            id: "7251cf61-ec9f-4951-b72c-7ec6c3664c75",
+            name: "神戸本線",
+            route_refs: [
+                ("fe0dd975-6b75-4e5f-98af-95dc9cd52694", Normal),
+                ("d3ababa9-86fd-47a7-b314-813a597609ac", Normal),
+                ("028056cf-14f4-41c1-bf6a-3d8258a740a8", Normal),
+                ("2dc7d095-99f9-4f32-8513-d00bf889f313", Normal),
+                ("56e09979-c725-4922-bf77-7af61aa2806b", Normal),
+                ("03aab703-d1d6-41ed-9a9d-3022fdd26c98", Normal),
+            ],
+        ),
+        "a01ea300-e62e-4172-97f4-c88d295c95bf": Line(
+            id: "a01ea300-e62e-4172-97f4-c88d295c95bf",
+            name: "(西宮北口-)伊丹線",
+            route_refs: [
+                ("028056cf-14f4-41c1-bf6a-3d8258a740a8", Reverse),
+                ("c41f37b0-e8e6-43ec-ab28-9616fd5b4152", Normal),
+            ],
+        ),
+        "9a6ac3bb-450c-4325-ba10-441979e36289": Line(
+            id: "9a6ac3bb-450c-4325-ba10-441979e36289",
+            name: "(大阪梅田-)今津北線",
+            route_refs: [
+                ("fe0dd975-6b75-4e5f-98af-95dc9cd52694", Normal),
+                ("d3ababa9-86fd-47a7-b314-813a597609ac", Normal),
+                ("028056cf-14f4-41c1-bf6a-3d8258a740a8", Normal),
+                ("fd399d67-4f6f-4d12-a644-4441dd905b32", Normal),
+            ],
+        ),
+        "2eb0129a-9689-4bba-a460-d1fa7c85648c": Line(
+            id: "2eb0129a-9689-4bba-a460-d1fa7c85648c",
+            name: "今津南線",
+            route_refs: [
+                ("4f932822-8f00-463e-985f-e83d5555a3d7", Normal),
+            ],
+        ),
+    },
+    train_types: {
+        "0127721b-388d-4b87-8c11-6aab50b10096": TrainType(
+            id: "0127721b-388d-4b87-8c11-6aab50b10096",
+            name: "区間普通",
+        ),
+        "b99f72d8-8685-47d1-aa23-4769fe77b751": TrainType(
+            id: "b99f72d8-8685-47d1-aa23-4769fe77b751",
+            name: "準特急",
+        ),
+        "04df6565-99e2-40be-9bb7-bba673c3aebc": TrainType(
+            id: "04df6565-99e2-40be-9bb7-bba673c3aebc",
+            name: "特急",
+        ),
+        "fd30e6d0-3a4a-45d4-a156-9ce384c57d5f": TrainType(
+            id: "fd30e6d0-3a4a-45d4-a156-9ce384c57d5f",
+            name: "通勤急行",
+        ),
+        "de9ccf5e-5bba-42c6-8206-dc2ed7b029b4": TrainType(
+            id: "de9ccf5e-5bba-42c6-8206-dc2ed7b029b4",
+            name: "急行",
+        ),
+        "b8fe592d-94c4-4b6c-9f8b-26d5148a1626": TrainType(
+            id: "b8fe592d-94c4-4b6c-9f8b-26d5148a1626",
+            name: "直通特急",
+        ),
+        "7befc32a-31d6-4d20-8615-0bd27e9772e9": TrainType(
+            id: "7befc32a-31d6-4d20-8615-0bd27e9772e9",
+            name: "通勤特急",
+        ),
+        "fb53dcd6-fcfb-488e-9faf-c30a55936f33": TrainType(
+            id: "fb53dcd6-fcfb-488e-9faf-c30a55936f33",
+            name: "臨時急行",
+        ),
+        "854a037c-2090-4477-887f-38de1de66e31": TrainType(
+            id: "854a037c-2090-4477-887f-38de1de66e31",
+            name: "区間急行",
+        ),
+        "50bb3709-556d-45d7-8046-d0f0f1cb7e55": TrainType(
+            id: "50bb3709-556d-45d7-8046-d0f0f1cb7e55",
+            name: "普通",
+        ),
+    },
+    diagrams: [
+        Diagram(
+            id: "4bf7fcd0-5fa7-4c6a-b0d6-3f6fba491b62",
+            name: "一号表",
+            down_trains: [
+                Train(
+                    id: "aaa4bd56-c057-4c7a-9187-c59393b96ff4",
+                    number: "",
+                    nickname: "",
+                    train_type_id: "b8fe592d-94c4-4b6c-9f8b-26d5148a1626",
+                    line_id: "7251cf61-ec9f-4951-b72c-7ec6c3664c75",
+                    direction: Down,
+                    times: [
+                        StationTime(
+                            arrive: None,
+                            departure: "13:00:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "13:01:30",
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: "13:03:10",
+                            departure: "13:03:45",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "13:05:05",
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "13:06:55",
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "13:08:45",
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "13:09:45",
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: "13:12:30",
+                            departure: "13:13:10",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "13:15:40",
+                            departure: "13:16:10",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "13:18:15",
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: "13:20:00",
+                            departure: "13:20:20",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "13:22:20",
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "13:23:30",
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "13:24:35",
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "13:25:40",
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: "13:27:20",
+                            departure: "13:28:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "13:29:50",
+                            departure: "13:30:10",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "13:32:00",
+                            departure: "13:32:30",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "13:34:00",
+                            departure: None,
+                            stop_type: Stop,
+                        ),
+                    ],
+                ),
+            ],
+            up_trains: [],
+        ),
+    ],
+    settings: Settings(
+        diagram_display: DiagramDisplaySettings(
+            route_refs: [
+                ("fe0dd975-6b75-4e5f-98af-95dc9cd52694", Normal),
+                ("d3ababa9-86fd-47a7-b314-813a597609ac", Normal),
+                ("028056cf-14f4-41c1-bf6a-3d8258a740a8", Normal),
+                ("2dc7d095-99f9-4f32-8513-d00bf889f313", Normal),
+                ("56e09979-c725-4922-bf77-7af61aa2806b", Normal),
+                ("03aab703-d1d6-41ed-9a9d-3022fdd26c98", Normal),
+                ("c41f37b0-e8e6-43ec-ab28-9616fd5b4152", Normal),
+                ("4f932822-8f00-463e-985f-e83d5555a3d7", Reverse),
+                ("fd399d67-4f6f-4d12-a644-4441dd905b32", Normal),
+                ("ff349fd5-3609-4d55-9b4f-5fae74cc996b", Normal),
+            ],
+        ),
+    ),
+)

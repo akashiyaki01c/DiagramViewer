@@ -1,15 +1,18 @@
+use std::{collections::HashMap, sync::Arc};
+
 use eframe::{
-    egui::{self, Event, Ui},
+    egui::{self, Event, Key, TextureOptions, Ui},
     emath::Align2,
-    epaint::{Color32, FontId, Pos2, Rect, Stroke},
+    epaint::{Color32, ColorImage, FontId, Pos2, Rect, Shape, Stroke, TextureId, TextureManager},
 };
+
+use crate::model::dia::diagram::Time;
 
 use super::{
     super::model::dia::diafile::DiaFile,
     dia_drawer::{draw_time_line, draw_train, get_station_line, get_station_y},
 };
 
-#[derive(Debug)]
 pub struct DiagramViewer {
     pub display_line_index: usize,
     pub display_diagram_index: usize,
@@ -19,6 +22,9 @@ pub struct DiagramViewer {
     pub scale_y: f32,
     pub window_size_x: f32,
     pub window_size_y: f32,
+    pub texture_manager: TextureManager,
+    pub day_start_minute: Time,
+    pub texture_id: HashMap<String, TextureId>,
 }
 
 impl Default for DiagramViewer {
@@ -32,6 +38,13 @@ impl Default for DiagramViewer {
             scale_y: 1.0,
             window_size_x: 0.0,
             window_size_y: 0.0,
+            texture_manager: TextureManager::default(),
+            day_start_minute: Time {
+                hour: 4,
+                minute: 0,
+                second: 0,
+            },
+            texture_id: HashMap::new(),
         }
     }
 }
@@ -43,10 +56,46 @@ impl DiagramViewer {
     pub const KM_PER_PIXEL: f32 = 20.0;
 
     pub const OFFSET_X: f32 = 100.0;
-    pub const OFFSET_Y: f32 = 20.0;
+    pub const OFFSET_Y: f32 = 50.0;
 
     pub fn new() -> Self {
-        Self::default()
+        let decode_png = |raw_bytes: &[u8]| -> Vec<u8> {
+            let decoder = png::Decoder::new(raw_bytes);
+            let mut reader = decoder.read_info().unwrap();
+            let mut buf = vec![0; reader.output_buffer_size()];
+            reader.next_frame(&mut buf).unwrap();
+            buf
+        };
+        let get_color_image = |raw_bytes: &[u8]| -> ColorImage {
+            println!("{:?}", raw_bytes.len());
+            ColorImage::from_rgba_premultiplied([128, 128], &decode_png(raw_bytes))
+        };
+        let texture_alloc =
+            |texture_manager: &mut TextureManager, name: &str, raw_bytes: &[u8]| -> TextureId {
+                texture_manager.alloc(
+                    String::from(name),
+                    eframe::epaint::ImageData::Color(Arc::new(get_color_image(raw_bytes))),
+                    TextureOptions::NEAREST,
+                )
+            };
+        let mut result = Self::default();
+        result.texture_id.insert(
+            String::from("shukko"),
+            texture_alloc(
+                &mut result.texture_manager,
+                "shukko",
+                include_bytes!("../../assets/shukko.png"),
+            ),
+        );
+        result.texture_id.insert(
+            String::from("nyuko"),
+            texture_alloc(
+                &mut result.texture_manager,
+                "nyuko",
+                include_bytes!("../../assets/nyuko.png"),
+            ),
+        );
+        result
     }
 
     pub fn update(&mut self, ctx: &egui::Context, ui: &mut Ui, diagram_data: &DiaFile) {
@@ -90,12 +139,17 @@ impl DiagramViewer {
                             .last()
                             .unwrap_or(&tmp);
                         self.offset_x = (self.offset_x + delta.x * DiagramViewer::TIME_PER_PIXEL)
-                            .clamp(
-                                (-1440.0 * DiagramViewer::TIME_PER_PIXEL * self.scale_x
+                            .max(
+                                (-1440.0 - self.day_start_minute.get_total_minute() as f32)
+                                    * DiagramViewer::TIME_PER_PIXEL
+                                    * self.scale_x
                                     + now_size.x
-                                    - DiagramViewer::OFFSET_X)
-                                    .min(0.0),
-                                0.0,
+                                    - DiagramViewer::OFFSET_X,
+                            )
+                            .min(
+                                -(self.day_start_minute.get_total_minute() as f32)
+                                    * DiagramViewer::TIME_PER_PIXEL
+                                    * self.scale_x,
                             );
                         self.offset_y = (self.offset_y + delta.y * DiagramViewer::TIME_PER_PIXEL)
                             .clamp(
@@ -104,13 +158,28 @@ impl DiagramViewer {
                             );
                     }
                 }
+                Event::Key {
+                    key,
+                    pressed: true,
+                    repeat: _,
+                    modifiers: _,
+                } => match key {
+                    Key::ArrowUp => {
+                        self.display_diagram_index = (self.display_diagram_index + 1)
+                            .clamp(0, diagram_data.railway.diagrams.len() - 1);
+                    }
+                    Key::ArrowDown => {
+                        self.display_diagram_index = (self.display_diagram_index - 1)
+                            .clamp(0, diagram_data.railway.diagrams.len() - 1);
+                    }
+                    _ => {}
+                },
                 _ => {}
             });
         });
 
         ui.allocate_space(now_size);
         let painter = ui.painter();
-
         painter.extend(draw_time_line(self, ui, diagram_data));
         painter.extend(get_station_line(self, ui, diagram_data));
 
@@ -124,10 +193,11 @@ impl DiagramViewer {
             }
         }
 
+        let mut shapes = vec![];
         // header background
         {
             let color = ui.style().visuals.window_fill;
-            painter.rect(
+            shapes.push(Shape::rect_filled(
                 Rect::from_points(&[
                     Pos2 {
                         x: 0.0 + start_pos.x,
@@ -140,9 +210,8 @@ impl DiagramViewer {
                 ]),
                 0.0,
                 color,
-                Stroke::NONE,
-            );
-            painter.rect(
+            ));
+            shapes.push(Shape::rect_filled(
                 Rect::from_points(&[
                     Pos2 {
                         x: 0.0 + start_pos.x,
@@ -155,20 +224,21 @@ impl DiagramViewer {
                 ]),
                 0.0,
                 color,
-                Stroke::NONE,
-            );
+            ));
         }
+        painter.extend(shapes);
+        shapes = vec![];
 
         // Y header
         {
-            for i in (0..24 * 60).step_by(60) {
+            for i in (0..=24 * 60 + self.day_start_minute.get_total_minute()).step_by(60) {
                 painter.text(
                     Pos2 {
                         x: (i as f32) * DiagramViewer::TIME_PER_PIXEL * self.scale_x
                             + DiagramViewer::OFFSET_X
                             + self.offset_x
                             + start_pos.x,
-                        y: start_pos.y,
+                        y: start_pos.y + DiagramViewer::OFFSET_Y / 2.0,
                     },
                     Align2::CENTER_TOP,
                     i / 60,
@@ -185,7 +255,7 @@ impl DiagramViewer {
                 let stroke_width: f32 = if stn.is_main { 2.0 } else { 0.6 };
                 let x = start_pos.x + Self::OFFSET_X / 2.0;
 
-                painter.hline(
+                shapes.push(Shape::hline(
                     std::ops::RangeInclusive::new(
                         0.0 + start_pos.x,
                         DiagramViewer::OFFSET_X + start_pos.x,
@@ -195,7 +265,7 @@ impl DiagramViewer {
                         width: stroke_width,
                         color: Color32::GRAY,
                     },
-                );
+                ));
                 painter.text(
                     Pos2 {
                         x,
@@ -225,15 +295,19 @@ impl DiagramViewer {
             ui.style().visuals.window_fill,
             Stroke::NONE,
         );
-        painter.hline(
-            std::ops::RangeInclusive::new(start_pos.x, start_pos.x + now_size.x),
-            DiagramViewer::OFFSET_Y,
-            Stroke::new(10.0, Color32::BLACK),
-        );
-        painter.vline(
-            DiagramViewer::OFFSET_X,
-            std::ops::RangeInclusive::new(start_pos.y, start_pos.y + now_size.y),
-            Stroke::new(10.0, Color32::BLACK),
-        );
+        {
+            shapes.push(Shape::hline(
+                std::ops::RangeInclusive::new(start_pos.x, start_pos.x + now_size.x),
+                DiagramViewer::OFFSET_Y,
+                Stroke::new(2.0, Color32::BLACK),
+            ));
+            shapes.push(Shape::vline(
+                DiagramViewer::OFFSET_X,
+                std::ops::RangeInclusive::new(start_pos.y, start_pos.y + now_size.y),
+                Stroke::new(2.0, Color32::BLACK),
+            ));
+        }
+
+        painter.extend(shapes);
     }
 }

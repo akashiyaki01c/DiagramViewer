@@ -1,0 +1,8 @@
+{
+	"rust-analyzer.linkedProjects": [
+		"./crates/diagram-testdata/Cargo.toml",
+		"./crates/diagram-types/Cargo.toml",
+		"./crates/train-drawer/Cargo.toml",
+		"./crates/train-drawer/Cargo.toml"
+	]
+}	

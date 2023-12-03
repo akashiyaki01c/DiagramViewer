@@ -3,4 +3,5 @@ pub mod diagram_viewer;
 pub mod explorer;
 pub mod menu_bar;
 
-mod dia_drawer;
+pub mod dia_drawer;
+pub mod timetable_viewer;

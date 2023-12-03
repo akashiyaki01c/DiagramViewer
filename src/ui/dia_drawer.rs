@@ -35,7 +35,8 @@ pub fn draw_train(
         .iter()
         .map(|v| v * viewer.scale_y)
         .collect::<Vec<f32>>();
-
+    let train_type = traintype_to_stroke(diagram_data, train);
+    let mut positions: Vec<Pos2> = vec![];
     for i in 0..train.station_times.len() - 1 {
         let before_sta = &train.station_times[i];
         let next_sta = &train.station_times[i + 1];
@@ -57,16 +58,38 @@ pub fn draw_train(
         } else {
             (0, None, 0, None)
         };
-        if time.1.unwrap().hour > time.3.unwrap().hour {
+        if time.1.unwrap().get_total_minute() < viewer.day_start_minute.get_total_minute() {
+            time.1 = Some(Time {
+                hour: time.1.unwrap().hour + 24,
+                ..time.1.unwrap()
+            })
+        }
+        if time.3.unwrap().get_total_minute() < viewer.day_start_minute.get_total_minute() {
             time.3 = Some(Time {
                 hour: time.3.unwrap().hour + 24,
                 ..time.3.unwrap()
             })
         }
 
-        let train_type = traintype_to_stroke(diagram_data, train);
-
-        if before_sta.arrive.is_some() && before_sta.departure.is_some() {
+        if time.1.is_some() {
+            positions.push(Pos2 {
+                x: (time.1.unwrap().get_total_minute() as f32) * x_scale
+                    + x
+                    + DiagramViewer::OFFSET_X
+                    + start_pos.x,
+                y: station_y[before_sta.station_index] + y + DiagramViewer::OFFSET_Y + start_pos.y,
+            });
+        }
+        if time.3.is_some() {
+            positions.push(Pos2 {
+                x: (time.3.unwrap().get_total_minute() as f32) * x_scale
+                    + x
+                    + DiagramViewer::OFFSET_X
+                    + start_pos.x,
+                y: station_y[next_sta.station_index] + y + DiagramViewer::OFFSET_Y + start_pos.y,
+            });
+        }
+        /* if before_sta.arrive.is_some() && before_sta.departure.is_some() {
             shapes.extend(Shape::dashed_line(
                 &[
                     Pos2 {
@@ -115,8 +138,14 @@ pub fn draw_train(
             train_type.0,
             train_type.1,
             train_type.2,
-        ));
+        )); */
     }
+    shapes.extend(Shape::dashed_line(
+        &positions,
+        train_type.0,
+        train_type.1,
+        train_type.2,
+    ));
     shapes
 }
 
@@ -167,7 +196,9 @@ pub fn draw_time_line(viewer: &DiagramViewer, ui: &Ui, diagram_data: &DiaFile) -
         .map(|v| v * viewer.scale_y)
         .collect::<Vec<f32>>();
 
-    for i in (0..=24 * 60).step_by(2) {
+    let total_min = 24 * 60 + viewer.day_start_minute.get_total_minute();
+    let start_min = viewer.day_start_minute.get_total_minute();
+    for i in (start_min..=total_min).step_by(2) {
         let line = eframe::epaint::Shape::dashed_line(
             &[
                 Pos2 {
@@ -188,7 +219,7 @@ pub fn draw_time_line(viewer: &DiagramViewer, ui: &Ui, diagram_data: &DiaFile) -
         );
         shapes.extend(line);
     }
-    for i in (0..=24 * 60).step_by(10) {
+    for i in (start_min..=total_min).step_by(10) {
         shapes.push(Shape::vline(
             (i as f32) * x_scale + DiagramViewer::OFFSET_X + x + start_pos.x,
             std::ops::RangeInclusive::new(
@@ -201,7 +232,7 @@ pub fn draw_time_line(viewer: &DiagramViewer, ui: &Ui, diagram_data: &DiaFile) -
             },
         ));
     }
-    for i in (0..=24 * 60).step_by(30) {
+    for i in (start_min..=total_min).step_by(30) {
         shapes.push(Shape::vline(
             (i as f32) * x_scale + DiagramViewer::OFFSET_X + x + start_pos.x,
             std::ops::RangeInclusive::new(
