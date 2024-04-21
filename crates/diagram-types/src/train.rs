@@ -138,10 +138,10 @@ impl StationTime {
     }
 
     pub fn is_empty(&self) -> bool {
-        if self.arrive == None || self.departure == None {
-            false
-        } else {
+        if self.arrive == None && self.departure == None {
             true
+        } else {
+            false
         }
     }
 }

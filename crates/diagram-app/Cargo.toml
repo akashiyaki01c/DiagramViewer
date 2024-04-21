@@ -1,0 +1,12 @@
+[package]
+name = "diagram-app"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+app-ui = { path = "../app-ui/" }
+diagram-testdata = { path = "../diagram-testdata/" }
+diagram-types = { path = "../diagram-types/" }
+eframe = { version = "0.23.0", features = ["persistence"] }

@@ -3,6 +3,7 @@
 		"./crates/diagram-testdata/Cargo.toml",
 		"./crates/diagram-types/Cargo.toml",
 		"./crates/train-drawer/Cargo.toml",
-		"./crates/app-ui/Cargo.toml"
+		"./crates/app-ui/Cargo.toml",
+		"./crates/diagram-app/Cargo.toml"
 	]
 }	

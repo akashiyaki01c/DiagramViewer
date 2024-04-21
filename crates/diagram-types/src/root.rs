@@ -35,6 +35,19 @@ impl RootFile {
     pub fn deserialize(str: &str) -> Self {
         ron::de::from_str(str).unwrap()
     }
+
+    pub fn serialize_comp(&self) -> Vec<u8> {
+        zstd::encode_all(self.serialize().as_bytes(), 3).expect("Compressed Error")
+    }
+
+    pub fn deserialize_comp(data: &[u8]) -> RootFile {
+        let bytes = zstd::decode_all(data);
+        if bytes.is_err() {
+            panic!();
+        }
+        RootFile::deserialize(&String::from_utf8(zstd::decode_all(bytes.unwrap().as_slice()).unwrap()).unwrap())
+    }
+    
 }
 
 #[derive(Debug, Clone, Deserialize, Serialize)]

@@ -1,0 +1,876 @@
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+RootFile(
+    version: FileVersion(0, 1),
+    stations: {
+        "e41a2289-e588-4086-8e30-2f6d23dce868": Station(
+            id: "e41a2289-e588-4086-8e30-2f6d23dce868",
+            name: "志摩磯部",
+        ),
+        "b83ad862-0be6-4220-8965-727ccaede704": Station(
+            id: "b83ad862-0be6-4220-8965-727ccaede704",
+            name: "伊賀神戸",
+        ),
+        "4bdf9bec-d328-4db5-a961-e7a68ca04cc7": Station(
+            id: "4bdf9bec-d328-4db5-a961-e7a68ca04cc7",
+            name: "大和高田",
+        ),
+        "a1105cd2-6e44-4a4e-8056-79fba84cea5e": Station(
+            id: "a1105cd2-6e44-4a4e-8056-79fba84cea5e",
+            name: "松坂",
+        ),
+        "969c610a-cbb6-4457-ba7d-faea3f9bf07a": Station(
+            id: "969c610a-cbb6-4457-ba7d-faea3f9bf07a",
+            name: "桔梗が丘",
+        ),
+        "a101a92d-8a06-429c-8bee-ee7460a1154e": Station(
+            id: "a101a92d-8a06-429c-8bee-ee7460a1154e",
+            name: "四日市",
+        ),
+        "231f676a-186c-4c27-8080-9e891f9ca8ae": Station(
+            id: "231f676a-186c-4c27-8080-9e891f9ca8ae",
+            name: "伊勢市",
+        ),
+        "f68c2930-3512-4e27-a208-c195dd209056": Station(
+            id: "f68c2930-3512-4e27-a208-c195dd209056",
+            name: "津",
+        ),
+        "a7d30a84-2789-406e-a7f6-1fde23dd1b78": Station(
+            id: "a7d30a84-2789-406e-a7f6-1fde23dd1b78",
+            name: "橿原神宮前",
+        ),
+        "208615b0-3d25-4a37-a994-7929ef6e8a53": Station(
+            id: "208615b0-3d25-4a37-a994-7929ef6e8a53",
+            name: "久居",
+        ),
+        "2ed68e9b-676f-481a-95b4-8ea8ec62b84e": Station(
+            id: "2ed68e9b-676f-481a-95b4-8ea8ec62b84e",
+            name: "大和西大寺",
+        ),
+        "238260e1-df25-49eb-8a1c-2968aa3e83dd": Station(
+            id: "238260e1-df25-49eb-8a1c-2968aa3e83dd",
+            name: "宇治山田",
+        ),
+        "b3b88f95-f7da-4142-9ed0-a9d4741a651b": Station(
+            id: "b3b88f95-f7da-4142-9ed0-a9d4741a651b",
+            name: "大和八木",
+        ),
+        "bebc945c-3035-437a-ae93-81dc8fab497d": Station(
+            id: "bebc945c-3035-437a-ae93-81dc8fab497d",
+            name: "布施",
+        ),
+        "279f6156-2bf3-4a47-8937-7fcdb7521090": Station(
+            id: "279f6156-2bf3-4a47-8937-7fcdb7521090",
+            name: "高の原",
+        ),
+        "733e0a7f-f7d9-45c8-9957-275f659c2782": Station(
+            id: "733e0a7f-f7d9-45c8-9957-275f659c2782",
+            name: "奈良",
+        ),
+        "354a9b07-24fb-4242-9c23-1bb534f9990f": Station(
+            id: "354a9b07-24fb-4242-9c23-1bb534f9990f",
+            name: "桑名",
+        ),
+        "167703a3-a5d8-482c-b161-af453c372a98": Station(
+            id: "167703a3-a5d8-482c-b161-af453c372a98",
+            name: "学園前",
+        ),
+        "e7eb889c-04bd-4767-9027-83ec7853f108": Station(
+            id: "e7eb889c-04bd-4767-9027-83ec7853f108",
+            name: "榛原",
+        ),
+        "7cb4eb04-73e2-4b91-a810-a5da5412c6ed": Station(
+            id: "7cb4eb04-73e2-4b91-a810-a5da5412c6ed",
+            name: "名古屋",
+        ),
+        "2c626716-6090-4232-beb1-66b24cccd1a5": Station(
+            id: "2c626716-6090-4232-beb1-66b24cccd1a5",
+            name: "鵜方",
+        ),
+        "e29bc18e-f24b-49b4-9f25-385dc6f198cd": Station(
+            id: "e29bc18e-f24b-49b4-9f25-385dc6f198cd",
+            name: "生駒",
+        ),
+        "c625cf5f-186a-44cb-b8e7-2a3957f103fc": Station(
+            id: "c625cf5f-186a-44cb-b8e7-2a3957f103fc",
+            name: "丹波橋",
+        ),
+        "73403313-40af-4dd5-922b-a757f083480c": Station(
+            id: "73403313-40af-4dd5-922b-a757f083480c",
+            name: "大阪難波",
+        ),
+        "2b148315-c05c-4bdb-89bc-172d9ee27b22": Station(
+            id: "2b148315-c05c-4bdb-89bc-172d9ee27b22",
+            name: "大阪上本町",
+        ),
+        "538a33b4-fc84-4b8e-bb37-e1ed7c4666d8": Station(
+            id: "538a33b4-fc84-4b8e-bb37-e1ed7c4666d8",
+            name: "賢島",
+        ),
+        "d522d081-8bde-4618-b44f-ee8db09667ab": Station(
+            id: "d522d081-8bde-4618-b44f-ee8db09667ab",
+            name: "京都",
+        ),
+        "2b23d207-9b75-47b0-99d5-ad7e887727f4": Station(
+            id: "2b23d207-9b75-47b0-99d5-ad7e887727f4",
+            name: "鶴橋",
+        ),
+        "72526329-5bfc-472c-a0ea-09260e3e6440": Station(
+            id: "72526329-5bfc-472c-a0ea-09260e3e6440",
+            name: "白子",
+        ),
+        "c69a1f94-ed68-4b29-aaef-cf68ed86bd7d": Station(
+            id: "c69a1f94-ed68-4b29-aaef-cf68ed86bd7d",
+            name: "五十鈴川",
+        ),
+        "53284625-df4e-4d33-83b4-483680288538": Station(
+            id: "53284625-df4e-4d33-83b4-483680288538",
+            name: "榊原温泉口",
+        ),
+        "b7b3268f-997d-4a92-8867-776760a59a69": Station(
+            id: "b7b3268f-997d-4a92-8867-776760a59a69",
+            name: "鳥羽",
+        ),
+        "a3b390f0-d71e-4aaa-9b0c-e74897205e59": Station(
+            id: "a3b390f0-d71e-4aaa-9b0c-e74897205e59",
+            name: "伊勢中川",
+        ),
+        "0b272de7-5ea1-4326-bd12-9ddb07cf8834": Station(
+            id: "0b272de7-5ea1-4326-bd12-9ddb07cf8834",
+            name: "西の京",
+        ),
+        "9c2dd739-75a8-4c42-ab4a-16b12dc994cf": Station(
+            id: "9c2dd739-75a8-4c42-ab4a-16b12dc994cf",
+            name: "名張",
+        ),
+    },
+    routes: {
+        "d6059ca8-825a-4daf-b33a-73597f1d50fb": Route(
+            id: "d6059ca8-825a-4daf-b33a-73597f1d50fb",
+            name: "名古屋線",
+            station_refs: [
+                "a3b390f0-d71e-4aaa-9b0c-e74897205e59",
+                "208615b0-3d25-4a37-a994-7929ef6e8a53",
+                "f68c2930-3512-4e27-a208-c195dd209056",
+                "72526329-5bfc-472c-a0ea-09260e3e6440",
+                "a101a92d-8a06-429c-8bee-ee7460a1154e",
+                "354a9b07-24fb-4242-9c23-1bb534f9990f",
+                "7cb4eb04-73e2-4b91-a810-a5da5412c6ed",
+            ],
+            station_distances: [
+                0.0,
+                4.8,
+                12.3,
+                25.9,
+                41.9,
+                55.1,
+                78.8,
+            ],
+        ),
+        "c8e5f2a8-60c0-42f2-bb86-7b15d5d99de8": Route(
+            id: "c8e5f2a8-60c0-42f2-bb86-7b15d5d99de8",
+            name: "橿原線(南)",
+            station_refs: [
+                "b3b88f95-f7da-4142-9ed0-a9d4741a651b",
+                "a7d30a84-2789-406e-a7f6-1fde23dd1b78",
+            ],
+            station_distances: [
+                20.5,
+                23.8,
+            ],
+        ),
+        "96f7f30f-8415-46cb-b9e8-f7d49b3de587": Route(
+            id: "96f7f30f-8415-46cb-b9e8-f7d49b3de587",
+            name: "橿原線(北)",
+            station_refs: [
+                "2ed68e9b-676f-481a-95b4-8ea8ec62b84e",
+                "0b272de7-5ea1-4326-bd12-9ddb07cf8834",
+                "b3b88f95-f7da-4142-9ed0-a9d4741a651b",
+            ],
+            station_distances: [
+                0.0,
+                2.8,
+                20.5,
+            ],
+        ),
+        "29741bb7-3a01-4cdd-ae4d-e8d6dc905fa0": Route(
+            id: "29741bb7-3a01-4cdd-ae4d-e8d6dc905fa0",
+            name: "奈良線(西)",
+            station_refs: [
+                "2b148315-c05c-4bdb-89bc-172d9ee27b22",
+                "2b23d207-9b75-47b0-99d5-ad7e887727f4",
+                "e29bc18e-f24b-49b4-9f25-385dc6f198cd",
+                "167703a3-a5d8-482c-b161-af453c372a98",
+                "2ed68e9b-676f-481a-95b4-8ea8ec62b84e",
+            ],
+            station_distances: [
+                -4.1,
+                -3.0,
+                14.2,
+                19.1,
+                22.3,
+            ],
+        ),
+        "eea56b08-ae49-4350-a2f3-80720cf128c8": Route(
+            id: "eea56b08-ae49-4350-a2f3-80720cf128c8",
+            name: "京都線",
+            station_refs: [
+                "d522d081-8bde-4618-b44f-ee8db09667ab",
+                "c625cf5f-186a-44cb-b8e7-2a3957f103fc",
+                "279f6156-2bf3-4a47-8937-7fcdb7521090",
+                "2ed68e9b-676f-481a-95b4-8ea8ec62b84e",
+            ],
+            station_distances: [
+                0.0,
+                6.0,
+                30.8,
+                34.6,
+            ],
+        ),
+        "b19510ee-6216-4440-9f48-1301d0b3e583": Route(
+            id: "b19510ee-6216-4440-9f48-1301d0b3e583",
+            name: "鳥羽線",
+            station_refs: [
+                "238260e1-df25-49eb-8a1c-2968aa3e83dd",
+                "c69a1f94-ed68-4b29-aaef-cf68ed86bd7d",
+                "b7b3268f-997d-4a92-8867-776760a59a69",
+            ],
+            station_distances: [
+                0.0,
+                1.9,
+                13.2,
+            ],
+        ),
+        "15666836-214a-4811-bf72-179ce4085b68": Route(
+            id: "15666836-214a-4811-bf72-179ce4085b68",
+            name: "大阪線(西)",
+            station_refs: [
+                "2b148315-c05c-4bdb-89bc-172d9ee27b22",
+                "2b23d207-9b75-47b0-99d5-ad7e887727f4",
+                "bebc945c-3035-437a-ae93-81dc8fab497d",
+                "4bdf9bec-d328-4db5-a961-e7a68ca04cc7",
+                "b3b88f95-f7da-4142-9ed0-a9d4741a651b",
+            ],
+            station_distances: [
+                0.0,
+                1.1,
+                4.1,
+                29.9,
+                34.8,
+            ],
+        ),
+        "89f0b638-00d4-4a7a-a993-45fa5fa5526f": Route(
+            id: "89f0b638-00d4-4a7a-a993-45fa5fa5526f",
+            name: "志摩線",
+            station_refs: [
+                "b7b3268f-997d-4a92-8867-776760a59a69",
+                "e41a2289-e588-4086-8e30-2f6d23dce868",
+                "2c626716-6090-4232-beb1-66b24cccd1a5",
+                "538a33b4-fc84-4b8e-bb37-e1ed7c4666d8",
+            ],
+            station_distances: [
+                0.0,
+                16.0,
+                21.3,
+                24.5,
+            ],
+        ),
+        "2602bb67-deb6-4186-ab8b-accc76ce55e0": Route(
+            id: "2602bb67-deb6-4186-ab8b-accc76ce55e0",
+            name: "奈良線(東)",
+            station_refs: [
+                "2ed68e9b-676f-481a-95b4-8ea8ec62b84e",
+                "733e0a7f-f7d9-45c8-9957-275f659c2782",
+            ],
+            station_distances: [
+                22.3,
+                26.7,
+            ],
+        ),
+        "11e9c7f6-9445-480e-85a9-e9373c34bcba": Route(
+            id: "11e9c7f6-9445-480e-85a9-e9373c34bcba",
+            name: "大阪線(東)",
+            station_refs: [
+                "b3b88f95-f7da-4142-9ed0-a9d4741a651b",
+                "e7eb889c-04bd-4767-9027-83ec7853f108",
+                "9c2dd739-75a8-4c42-ab4a-16b12dc994cf",
+                "969c610a-cbb6-4457-ba7d-faea3f9bf07a",
+                "b83ad862-0be6-4220-8965-727ccaede704",
+                "53284625-df4e-4d33-83b4-483680288538",
+                "a3b390f0-d71e-4aaa-9b0c-e74897205e59",
+            ],
+            station_distances: [
+                34.8,
+                50.1,
+                67.2,
+                70.0,
+                75.5,
+                95.4,
+                108.9,
+            ],
+        ),
+        "17b39f0f-2ceb-41c0-83a7-737b87b7178b": Route(
+            id: "17b39f0f-2ceb-41c0-83a7-737b87b7178b",
+            name: "山田線",
+            station_refs: [
+                "a3b390f0-d71e-4aaa-9b0c-e74897205e59",
+                "a1105cd2-6e44-4a4e-8056-79fba84cea5e",
+                "231f676a-186c-4c27-8080-9e891f9ca8ae",
+                "238260e1-df25-49eb-8a1c-2968aa3e83dd",
+            ],
+            station_distances: [
+                0.0,
+                8.4,
+                27.7,
+                28.3,
+            ],
+        ),
+        "bc4cd3c9-b309-443b-aa24-dc864041ac78": Route(
+            id: "bc4cd3c9-b309-443b-aa24-dc864041ac78",
+            name: "難波線",
+            station_refs: [
+                "73403313-40af-4dd5-922b-a757f083480c",
+                "2b148315-c05c-4bdb-89bc-172d9ee27b22",
+            ],
+            station_distances: [
+                0.0,
+                2.0,
+            ],
+        ),
+    },
+    lines: {
+        "dea89647-61b8-4b7a-9b9d-9f09d39552a2": Line(
+            id: "dea89647-61b8-4b7a-9b9d-9f09d39552a2",
+            name: "名伊特急",
+            route_refs: [
+                ("d6059ca8-825a-4daf-b33a-73597f1d50fb", Reverse),
+                ("17b39f0f-2ceb-41c0-83a7-737b87b7178b", Normal),
+                ("b19510ee-6216-4440-9f48-1301d0b3e583", Normal),
+                ("89f0b638-00d4-4a7a-a993-45fa5fa5526f", Normal),
+            ],
+        ),
+        "a376ea23-8d23-4aea-bc39-85dcb170ae05": Line(
+            id: "a376ea23-8d23-4aea-bc39-85dcb170ae05",
+            name: "京伊特急",
+            route_refs: [
+                ("eea56b08-ae49-4350-a2f3-80720cf128c8", Normal),
+                ("96f7f30f-8415-46cb-b9e8-f7d49b3de587", Normal),
+                ("11e9c7f6-9445-480e-85a9-e9373c34bcba", Normal),
+                ("17b39f0f-2ceb-41c0-83a7-737b87b7178b", Normal),
+                ("b19510ee-6216-4440-9f48-1301d0b3e583", Normal),
+                ("89f0b638-00d4-4a7a-a993-45fa5fa5526f", Normal),
+            ],
+        ),
+        "338fe0ba-1ded-43c0-9e68-158d18bb8ad1": Line(
+            id: "338fe0ba-1ded-43c0-9e68-158d18bb8ad1",
+            name: "名阪特急",
+            route_refs: [
+                ("bc4cd3c9-b309-443b-aa24-dc864041ac78", Normal),
+                ("15666836-214a-4811-bf72-179ce4085b68", Normal),
+                ("11e9c7f6-9445-480e-85a9-e9373c34bcba", Normal),
+                ("d6059ca8-825a-4daf-b33a-73597f1d50fb", Normal),
+            ],
+        ),
+        "021d2c70-377c-4611-a956-a7afb5ea1efd": Line(
+            id: "021d2c70-377c-4611-a956-a7afb5ea1efd",
+            name: "京奈特急",
+            route_refs: [
+                ("eea56b08-ae49-4350-a2f3-80720cf128c8", Normal),
+                ("2602bb67-deb6-4186-ab8b-accc76ce55e0", Normal),
+            ],
+        ),
+        "61507cdc-f2df-4228-b321-8c64db0809c2": Line(
+            id: "61507cdc-f2df-4228-b321-8c64db0809c2",
+            name: "京橿特急",
+            route_refs: [
+                ("eea56b08-ae49-4350-a2f3-80720cf128c8", Normal),
+                ("96f7f30f-8415-46cb-b9e8-f7d49b3de587", Normal),
+                ("c8e5f2a8-60c0-42f2-bb86-7b15d5d99de8", Normal),
+            ],
+        ),
+        "be08ea6e-6fae-4109-ab4c-2ce17ca9ed66": Line(
+            id: "be08ea6e-6fae-4109-ab4c-2ce17ca9ed66",
+            name: "阪伊特急",
+            route_refs: [
+                ("bc4cd3c9-b309-443b-aa24-dc864041ac78", Normal),
+                ("15666836-214a-4811-bf72-179ce4085b68", Normal),
+                ("11e9c7f6-9445-480e-85a9-e9373c34bcba", Normal),
+                ("17b39f0f-2ceb-41c0-83a7-737b87b7178b", Normal),
+                ("b19510ee-6216-4440-9f48-1301d0b3e583", Normal),
+                ("89f0b638-00d4-4a7a-a993-45fa5fa5526f", Normal),
+            ],
+        ),
+        "897c5a0b-3be9-4b5a-b386-d3d6ee5fa250": Line(
+            id: "897c5a0b-3be9-4b5a-b386-d3d6ee5fa250",
+            name: "阪奈特急",
+            route_refs: [
+                ("bc4cd3c9-b309-443b-aa24-dc864041ac78", Normal),
+                ("29741bb7-3a01-4cdd-ae4d-e8d6dc905fa0", Normal),
+                ("2602bb67-deb6-4186-ab8b-accc76ce55e0", Normal),
+            ],
+        ),
+    },
+    train_types: {
+        "bafe53b6-43ef-4e7f-852b-bf5149594462": TrainType(
+            id: "bafe53b6-43ef-4e7f-852b-bf5149594462",
+            name: "特急",
+        ),
+    },
+    diagrams: [
+        Diagram(
+            id: "80367bc8-a76e-43d8-9279-c1e41216e1bc",
+            name: "平日",
+            trains: [
+                Train(
+                    id: "44236155-6c80-4b6b-8470-ec1eeb407de4",
+                    number: "",
+                    nickname: "",
+                    train_type_id: "bafe53b6-43ef-4e7f-852b-bf5149594462",
+                    line_id: "338fe0ba-1ded-43c0-9e68-158d18bb8ad1",
+                    direction: Down,
+                    times: [
+                        StationTime(
+                            arrive: None,
+                            departure: "06:30:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "06:33:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "06:36:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: "06:59:00",
+                            departure: "07:00:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "07:22:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "07:28:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "08:01:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "08:10:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "08:23:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "08:35:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "08:54:00",
+                            stop_type: Stop,
+                        ),
+                    ],
+                ),
+                Train(
+                    id: "2c2c15bd-2157-499d-9e5a-eb9ee17cf149",
+                    number: "",
+                    nickname: "",
+                    train_type_id: "bafe53b6-43ef-4e7f-852b-bf5149594462",
+                    line_id: "338fe0ba-1ded-43c0-9e68-158d18bb8ad1",
+                    direction: Up,
+                    times: [
+                        StationTime(
+                            arrive: None,
+                            departure: "07:00:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "07:45:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: "08:37:00",
+                            departure: "08:38:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "09:03:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "09:05:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "09:09:00",
+                            departure: None,
+                            stop_type: Stop,
+                        ),
+                    ],
+                ),
+                Train(
+                    id: "919fdf4a-cbe7-420d-a9fe-909957ff6a76",
+                    number: "",
+                    nickname: "",
+                    train_type_id: "bafe53b6-43ef-4e7f-852b-bf5149594462",
+                    line_id: "be08ea6e-6fae-4109-ab4c-2ce17ca9ed66",
+                    direction: Down,
+                    times: [
+                        StationTime(
+                            arrive: None,
+                            departure: "06:05:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "06:08:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "06:11:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "06:32:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "06:36:00",
+                            departure: "06:37:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "06:48:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "07:02:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "07:08:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "07:21:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "07:30:00",
+                            departure: "07:32:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "07:38:00",
+                            departure: "07:41:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "07:53:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "07:55:00",
+                            departure: "07:59:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "08:01:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "08:10:00",
+                            departure: "08:13:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "08:30:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "08:36:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "08:42:00",
+                            departure: None,
+                            stop_type: Stop,
+                        ),
+                    ],
+                ),
+                Train(
+                    id: "ea9e8ce5-6b52-4dd0-a66d-0e138a1c5e90",
+                    number: "",
+                    nickname: "",
+                    train_type_id: "bafe53b6-43ef-4e7f-852b-bf5149594462",
+                    line_id: "dea89647-61b8-4b7a-9b9d-9f09d39552a2",
+                    direction: Down,
+                    times: [
+                        StationTime(
+                            arrive: None,
+                            departure: "07:00:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "07:45:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: Pass,
+                        ),
+                        StationTime(
+                            arrive: "07:30:00",
+                            departure: "07:32:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "07:38:00",
+                            departure: "07:41:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "07:53:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "07:55:00",
+                            departure: "07:59:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "08:01:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "08:10:00",
+                            departure: "08:13:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "08:30:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "08:36:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "08:42:00",
+                            departure: None,
+                            stop_type: Stop,
+                        ),
+                    ],
+                ),
+                Train(
+                    id: "9f61d20a-01af-41f7-b052-8139b9faf2ab",
+                    number: "",
+                    nickname: "",
+                    train_type_id: "bafe53b6-43ef-4e7f-852b-bf5149594462",
+                    line_id: "021d2c70-377c-4611-a956-a7afb5ea1efd",
+                    direction: Down,
+                    times: [
+                        StationTime(
+                            arrive: None,
+                            departure: "07:50:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: "07:57:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: None,
+                            departure: None,
+                            stop_type: None,
+                        ),
+                        StationTime(
+                            arrive: "08:20:00",
+                            departure: "08:20:00",
+                            stop_type: Stop,
+                        ),
+                        StationTime(
+                            arrive: "08:25:00",
+                            departure: None,
+                            stop_type: Stop,
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    ],
+    settings: Settings(
+        diagram_display: DiagramDisplaySettings(
+            route_refs: [
+                ("eea56b08-ae49-4350-a2f3-80720cf128c8", Normal),
+                ("bc4cd3c9-b309-443b-aa24-dc864041ac78", Normal),
+                ("29741bb7-3a01-4cdd-ae4d-e8d6dc905fa0", Normal),
+                ("2602bb67-deb6-4186-ab8b-accc76ce55e0", Normal),
+                ("96f7f30f-8415-46cb-b9e8-f7d49b3de587", Normal),
+                ("c8e5f2a8-60c0-42f2-bb86-7b15d5d99de8", Normal),
+                ("15666836-214a-4811-bf72-179ce4085b68", Normal),
+                ("11e9c7f6-9445-480e-85a9-e9373c34bcba", Normal),
+                ("d6059ca8-825a-4daf-b33a-73597f1d50fb", Normal),
+                ("17b39f0f-2ceb-41c0-83a7-737b87b7178b", Normal),
+                ("b19510ee-6216-4440-9f48-1301d0b3e583", Normal),
+                ("89f0b638-00d4-4a7a-a993-45fa5fa5526f", Normal),
+            ],
+        ),
+    ),
+)

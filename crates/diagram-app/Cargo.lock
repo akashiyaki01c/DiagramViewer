@@ -718,6 +718,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "diagram-app"
+version = "0.1.0"
+dependencies = [
+ "app-ui",
+ "diagram-testdata",
+ "diagram-types",
+ "eframe",
+]
+
+[[package]]
 name = "diagram-testdata"
 version = "0.1.0"
 dependencies = [

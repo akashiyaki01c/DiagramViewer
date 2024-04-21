@@ -765,6 +765,7 @@ dependencies = [
  "ron",
  "serde",
  "uuid",
+ "zstd",
 ]
 
 [[package]]
